@@ -1,0 +1,39 @@
+﻿@model TravelTripProje.Models.Sınıflar.Yorumlar
+
+
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("YorumGüncelle", "Admin", FormMethod.Post))
+{
+
+    @Html.LabelFor(o => o.ID)
+    @Html.TextBoxFor(o => o.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    <br />
+
+    @Html.LabelFor(o => o.KullaniciAdi)
+    @Html.TextBoxFor(o => o.KullaniciAdi, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(o => o.Mail)
+    @Html.TextBoxFor(o => o.Mail, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(o => o.Yorum)
+    @Html.TextAreaFor(o => o.Yorum, 15, 1, new { @class = "form-control" })
+
+    <br />
+
+    <button class="btn btn-success">Yorum Güncelle</button>
+}
+
+
+
